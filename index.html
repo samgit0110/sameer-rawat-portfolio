@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sameer Rawat — Network Security and Infrastructure Operations professional. FortiGate, security monitoring, incident response, and secure infrastructure.">
+  <title>Sameer Rawat | Cybersecurity Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --surface: #121722;
+      --surface-2: #171e2b;
+      --text: #f3f5f7;
+      --muted: #aab4c2;
+      --accent: #b7f36b;
+      --accent-2: #8ee4d7;
+      --line: rgba(255,255,255,.10);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text); background:
+      radial-gradient(ellipse at 80% 0%, rgba(142,228,215,.08), transparent 35%),
+      radial-gradient(ellipse at 0% 30%, rgba(183,243,107,.06), transparent 30%), var(--bg);
+      font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(11,13,18,.82); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+    nav { min-height: 72px; display:flex; align-items:center; justify-content:space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.15rem; }
+    .brand span { color: var(--accent); }
+    .navlinks { display:flex; gap: 24px; color: var(--muted); font-size: .92rem; }
+    .navlinks a:hover { color: var(--accent); }
+    .hero { min-height: 78vh; display:grid; align-items:center; padding: 78px 0 70px; }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 700; }
+    h1 { font-size: clamp(2.7rem, 7vw, 5.4rem); line-height: 1.03; letter-spacing: -.065em; margin: 18px 0; max-width: 850px; }
+    h1 .highlight { color: var(--accent); }
+    .intro { max-width: 690px; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.22rem); }
+    .actions { display:flex; flex-wrap:wrap; gap: 12px; margin-top: 30px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding: 11px 18px; border-radius: 9px; border:1px solid var(--line); font-weight:700; transition: transform .2s, border-color .2s; }
+    .btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .btn.primary { background: var(--accent); color: #11160b; border-color: transparent; }
+    .meta { display:flex; flex-wrap:wrap; gap: 10px; margin-top: 35px; }
+    .pill { border:1px solid var(--line); color:var(--muted); border-radius: 999px; padding: 6px 12px; font-size:.82rem; background:rgba(255,255,255,.025); }
+    section { padding: 78px 0; border-top:1px solid var(--line); }
+    .section-head { margin-bottom: 30px; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-.045em; margin: 8px 0; }
+    .section-sub { color:var(--muted); max-width:700px; margin:0; }
+    .grid { display:grid; grid-template-columns:repeat(12, 1fr); gap:16px; }
+    .card { background:linear-gradient(145deg, var(--surface), rgba(18,23,34,.65)); border:1px solid var(--line); border-radius:16px; padding:22px; }
+    .card h3 { margin:0 0 8px; font-size:1.12rem; }
+    .card p { margin:0; color:var(--muted); }
+    .skill-card { grid-column:span 4; }
+    .skill-card .taglist { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+    .tag { color:#d9e2eb; background:var(--surface-2); border:1px solid var(--line); padding:5px 9px; border-radius:7px; font-size:.8rem; }
+    .timeline { display:grid; gap:16px; }
+    .role { display:grid; grid-template-columns: 210px 1fr; gap:22px; }
+    .role-date { color:var(--accent-2); font-size:.9rem; font-weight:700; }
+    .role h3 { margin:0; }
+    .role .company { color:var(--muted); margin:3px 0 12px; }
+    .role ul { margin:0; padding-left:19px; color:var(--muted); }
+    .role li + li { margin-top:7px; }
+    .project { grid-column:span 6; display:flex; flex-direction:column; gap:12px; }
+    .project .project-type { color:var(--accent); font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.12em; }
+    .project .taglist { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; padding-top:12px; }
+    .education { grid-column:span 6; }
+    .education .date { color:var(--accent-2); font-size:.85rem; font-weight:700; }
+    .contact-panel { display:flex; align-items:center; justify-content:space-between; gap:25px; flex-wrap:wrap; }
+    footer { padding:25px 0 40px; color:var(--muted); font-size:.85rem; }
+    .footrow { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; border-top:1px solid var(--line); padding-top:20px; }
+    @media (max-width: 760px) {
+      .navlinks { gap:12px; font-size:.8rem; }
+      .navlinks a:nth-child(2), .navlinks a:nth-child(3) { display:none; }
+      .hero { min-height:auto; padding:75px 0; }
+      .skill-card, .project, .education { grid-column:span 12; }
+      .role { grid-template-columns:1fr; gap:8px; }
+      section { padding:58px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#home">SAMEER<span>.</span>RAWAT</a>
+        <div class="navlinks">
+          <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero" id="home" style="border-top:0">
+        <div>
+          <div class="eyebrow">Network Security · Infrastructure Operations</div>
+          <h1>Building and supporting <span class="highlight">secure infrastructure.</span></h1>
+          <p class="intro">I’m Sameer Rawat, an IT and security professional with hands-on experience in network security operations, FortiGate firewall administration, security monitoring, incident investigation, and data-center infrastructure support.</p>
+          <div class="actions">
+            <a class="btn primary" href="#experience">Explore my experience ↘</a>
+            <a class="btn" href="#contact">Get in touch</a>
+            <!-- Replace the href below with your resume PDF URL after adding it to this GitHub repository. -->
+            <a class="btn" href="Sameer-Rawat-Resume.pdf" target="_blank" rel="noopener">View résumé ↗</a>
+          </div>
+          <div class="meta">
+            <span class="pill">Mumbai, India</span><span class="pill">Fortinet / Network Security</span><span class="pill">Incident Response & RCA</span><span class="pill">Infrastructure Operations</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section-head">
+          <div class="eyebrow">About</div><h2>Security-minded. Operations-focused.</h2>
+          <p class="section-sub">My background spans enterprise network security and infrastructure operations. I enjoy troubleshooting complex connectivity and security issues, improving operational processes, and collaborating with teams to keep critical services reliable.</p>
+        </div>
+        <div class="grid">
+          <article class="card" style="grid-column:span 12">
+            <h3>What I bring</h3>
+            <p>Practical firewall administration and policy management; traffic and log analysis; incident handling and root-cause analysis; change implementation and validation; audit remediation; automation of repetitive operational tasks; and coordination with internal teams and OEM/vendor support.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-head"><div class="eyebrow">Technical toolkit</div><h2>Skills & technologies</h2><p class="section-sub">Tools and technologies I have worked with across security and infrastructure operations.</p></div>
+        <div class="grid">
+          <article class="card skill-card"><h3>Network & Firewall Security</h3><p>Policy design, access control, secure traffic flows and connectivity troubleshooting.</p><div class="taglist"><span class="tag">FortiGate NGFW</span><span class="tag">NAT</span><span class="tag">IPsec / SSL VPN</span><span class="tag">IPS</span><span class="tag">Application Control</span><span class="tag">HA</span><span class="tag">VDOMs</span></div></article>
+          <article class="card skill-card"><h3>Monitoring & Incident Response</h3><p>Security log analysis, investigations, event triage and operational RCA.</p><div class="taglist"><span class="tag">FortiAnalyzer</span><span class="tag">SIEM</span><span class="tag">Traffic Analysis</span><span class="tag">Incident Management</span><span class="tag">RCA</span><span class="tag">Audit Remediation</span></div></article>
+          <article class="card skill-card"><h3>Infrastructure & Automation</h3><p>Network fundamentals, systems support and scripting for repeatable tasks.</p><div class="taglist"><span class="tag">BGP / OSPF</span><span class="tag">VLANs</span><span class="tag">Linux</span><span class="tag">AWS</span><span class="tag">VMware</span><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">FortiManager</span></div></article>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-head"><div class="eyebrow">Career</div><h2>Professional experience</h2><p class="section-sub">A snapshot of my work across infrastructure operations, network security, and software engineering.</p></div>
+        <div class="timeline">
+          <article class="card role">
+            <div class="role-date">Nov 2026 – Present</div>
+            <div><h3>GFOCC Tech (L3)</h3><div class="company">Amazon · Mumbai, India</div><ul>
+              <li>Supporting global network and compute infrastructure operations through monitoring, troubleshooting, and coordination.</li>
+              <li>Working across server, network, and data-center operational processes with a focus on service reliability and adherence to standards.</li>
+              <li>Role scope includes remote technical support and operational escalation in a 24×7 environment.</li>
+            </ul></div>
+          </article>
+          <article class="card role">
+            <div class="role-date">Oct 2023 – Oct 2026</div>
+            <div><h3>Project Engineer</h3><div class="company">C-DAC · Network Security & Infrastructure Operations</div><ul>
+              <li>Administered and monitored FortiGate next-generation firewalls, including security policies, NAT, VPN, IPS, and application-control configurations.</li>
+              <li>Analyzed security events and traffic through FortiAnalyzer and SIEM platforms; supported incident investigation, RCA, change implementation, and configuration validation.</li>
+              <li>Worked across data-center and BCP/DR environments, including VDOMs and large policy sets; coordinated with teams and OEM support for troubleshooting and remediation.</li>
+              <li>Contributed to audit remediation by addressing firewall and monitoring findings and preparing supporting evidence.</li>
+              <li>Developed and tested Python REST API automation for firewall configuration backups in HA environments, improving repeatability over manual processes.</li>
+              <li>Supported infrastructure availability and operational continuity, including change and recovery activities.</li>
+            </ul></div>
+          </article>
+          <article class="card role">
+            <div class="role-date">Oct 2021 – Jan 2023</div>
+            <div><h3>System Engineer</h3><div class="company">Tata Consultancy Services (TCS)</div><ul>
+              <li>Worked on a Java-based SWIFT security transactions application using Java, Struts, and Oracle.</li>
+              <li>Participated in Agile/Scrum delivery, application testing, bug fixing, and production support.</li>
+              <li>Collaborated with team members to investigate application issues and support stable releases.</li>
+            </ul></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-head"><div class="eyebrow">Selected work</div><h2>Projects & practical experience</h2><p class="section-sub">Hands-on projects that demonstrate security, automation, and infrastructure skills. Details can be expanded as you publish lab write-ups.</p></div>
+        <div class="grid">
+          <article class="card project"><div class="project-type">Security automation</div><h3>FortiGate Configuration Backup Automation</h3><p>Created a Python-based workflow using FortiGate REST APIs to automate configuration backups. Tested the workflow in a pre-production environment before operational use, including consideration for HA deployments.</p><div class="taglist"><span class="tag">Python</span><span class="tag">REST API</span><span class="tag">FortiGate</span><span class="tag">Automation</span></div></article>
+          <article class="card project"><div class="project-type">Vulnerability assessment</div><h3>DVWA — Web Application VAPT</h3><p>Practiced web application vulnerability assessment against a deliberately vulnerable application, exploring common web weaknesses and documenting findings.</p><div class="taglist"><span class="tag">Web Security</span><span class="tag">VAPT</span><span class="tag">DVWA</span></div></article>
+          <article class="card project"><div class="project-type">DevOps / monitoring</div><h3>Containerized Monitoring Stack</h3><p>Built a deployment flow involving Jenkins, Docker Swarm, Nginx load balancing, and Grafana to explore automated delivery and observability.</p><div class="taglist"><span class="tag">Jenkins</span><span class="tag">Docker Swarm</span><span class="tag">Nginx</span><span class="tag">Grafana</span></div></article>
+          <article class="card project"><div class="project-type">Infrastructure as code</div><h3>Monitoring with Ansible & Prometheus</h3><p>Explored infrastructure automation and monitoring using Ansible with Prometheus and Grafana.</p><div class="taglist"><span class="tag">Ansible</span><span class="tag">Prometheus</span><span class="tag">Grafana</span></div></article>
+        </div>
+      </section>
+
+      <section id="education">
+        <div class="section-head"><div class="eyebrow">Education</div><h2>Academic background</h2></div>
+        <div class="grid">
+          <article class="card education"><div class="date">2023</div><h3>PG-DITISS</h3><p>Centre for Development of Advanced Computing (C-DAC), Pune</p></article>
+          <article class="card education"><div class="date">2021</div><h3>B.E. — Computer Engineering</h3><p>Gangamai College of Engineering, Nagaon · 76.52%</p></article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact-panel">
+          <div><div class="eyebrow">Contact</div><h2>Let’s connect.</h2><p class="section-sub">Interested in network security, cybersecurity, and infrastructure engineering conversations.</p></div>
+          <div class="actions">
+            <!-- Replace these placeholders with your actual public contact details. -->
+            <a class="btn primary" href="mailto:sameerar5134@gmail.com">Email me ↗</a>
+            <a class="btn" href="https://www.linkedin.com/in/sameer-rawat-infosec/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn" href="https://github.com/samgit0110" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer><div class="wrap"><div class="footrow"><span>© <span id="year">2026</span> Sameer Rawat</span><span>Build · Secure · Innovate</span></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
